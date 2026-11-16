@@ -24,12 +24,12 @@ import {
   TRIAGE_WOULD_SKIP_TAG_PREFIX,
   VERDICT_TAGS,
   type AlertSeverity,
-} from '../../alert_triage/constants';
-import { LOADED_ALERT_FIELDS } from '../../alert_triage/loaded_alert_fields';
-import { PATTERN_KEY_FIELDS, getDetection } from '../../alert_triage/pattern_key';
-import type { SweepPorts } from '../../alert_triage/plan_sweep';
-import type { MatchCandidate } from '../../alert_triage/fp_decisions';
-import type { TriageAlert } from '../../alert_triage/types';
+} from '../constants';
+import { LOADED_ALERT_FIELDS } from '../loaded_alert_fields';
+import { PATTERN_KEY_FIELDS, getDetection } from '../pattern_key';
+import type { SweepPorts } from '../plan_sweep';
+import type { MatchCandidate } from '../fp_decisions';
+import type { TriageAlert } from '../types';
 
 type KibanaApi = Pick<StepHandlerContext['contextManager'], 'callKibanaApi'>;
 

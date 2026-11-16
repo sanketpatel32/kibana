@@ -25,7 +25,7 @@
  * The keys come from the real key code, so a change to the key rules changes the seed with it.
  *
  * Usage:
- *   node x-pack/solutions/security/plugins/alertzero/scripts/seed_triage_decisions.js [options]
+ *   node x-pack/solutions/security/plugins/alertzero/scripts/alert_triage/seed_triage_decisions.js [options]
  *
  *   --es      Elasticsearch base URL (default: http://localhost:9200)
  *   --space   Kibana space id (default: default)
@@ -56,8 +56,10 @@ const {
   decisionId,
   buildDecisionDocument,
   groupByStrictKey,
-} = require('../server/alert_triage/fp_decisions');
-const { TRIAGE_DECISIONS_AI_INDEX_DEST } = require('../common/step_types/triage_decisions_index');
+} = require('../../server/workers/alert_triage/fp_decisions');
+const {
+  TRIAGE_DECISIONS_AI_INDEX_DEST,
+} = require('../../common/step_types/triage_decisions_index');
 
 const args = process.argv.slice(2);
 const flag = (name, fallback) => {

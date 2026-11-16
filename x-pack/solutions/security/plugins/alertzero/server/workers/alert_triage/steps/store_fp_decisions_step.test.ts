@@ -6,8 +6,8 @@
  */
 
 import type { StepHandlerContext } from '@kbn/workflows-extensions/server';
-import { TRIAGE_DECISIONS_AI_INDEX_DEST } from '../../../common/step_types/triage_decisions_index';
-import { groupByStrictKey, strictKeyTag } from '../../alert_triage/fp_decisions';
+import { TRIAGE_DECISIONS_AI_INDEX_DEST } from '../../../../common/step_types/triage_decisions_index';
+import { groupByStrictKey, strictKeyTag } from '../fp_decisions';
 import { getTriageStoreFpDecisionsStepDefinition } from './store_fp_decisions_step';
 
 const processSource = (executable: string) => ({

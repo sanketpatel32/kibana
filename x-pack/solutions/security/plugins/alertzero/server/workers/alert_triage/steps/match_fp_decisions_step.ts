@@ -7,11 +7,11 @@
 
 import type { KibanaRequest } from '@kbn/core/server';
 import { createServerStepDefinition } from '@kbn/workflows-extensions/server';
-import { TRIAGE_DECISIONS_AI_INDEX_DEST } from '../../../common/step_types/triage_decisions_index';
+import { TRIAGE_DECISIONS_AI_INDEX_DEST } from '../../../../common/step_types/triage_decisions_index';
 import {
   triageMatchFpDecisionsStepCommonDefinition,
   type MatchFpDecisionsStatus,
-} from '../../../common/step_types/alert_triage';
+} from '../../../../common/workers/alert_triage/step_types';
 import {
   DECISION_AUTO_CLOSE_SEVERITIES,
   DECISION_CAP_WINDOW_MS,
@@ -28,7 +28,7 @@ import {
   TRIAGE_WOULD_CLOSE_TAG_PREFIX,
   TRIAGE_WOULD_SKIP_TAG_PREFIX,
   type DecisionAutoCloseMode,
-} from '../../alert_triage/constants';
+} from '../constants';
 import {
   decisionId,
   hashCandidates,
@@ -36,9 +36,9 @@ import {
   readActiveDecision,
   type MatchCandidate,
   type StoredDecision,
-} from '../../alert_triage/fp_decisions';
-import { buildPatternKeys, describePatternKey, getField } from '../../alert_triage/pattern_key';
-import { tagInChunks } from '../../alert_triage/plan_sweep';
+} from '../fp_decisions';
+import { buildPatternKeys, describePatternKey, getField } from '../pattern_key';
+import { tagInChunks } from '../plan_sweep';
 import {
   closeStillOpenAlertsAsFalsePositive,
   type DecisionCursor,

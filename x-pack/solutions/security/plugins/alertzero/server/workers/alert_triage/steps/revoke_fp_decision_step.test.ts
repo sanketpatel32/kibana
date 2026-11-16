@@ -6,8 +6,8 @@
  */
 
 import type { StepHandlerContext } from '@kbn/workflows-extensions/server';
-import { TRIAGE_DECISIONS_AI_INDEX_DEST } from '../../../common/step_types/triage_decisions_index';
-import { MAX_REVOKE_PAGES } from '../../alert_triage/constants';
+import { TRIAGE_DECISIONS_AI_INDEX_DEST } from '../../../../common/step_types/triage_decisions_index';
+import { MAX_REVOKE_PAGES } from '../constants';
 import { getTriageRevokeFpDecisionStepDefinition } from './revoke_fp_decision_step';
 
 const APPROVAL = 'fp-decision-0123456789abcdef';

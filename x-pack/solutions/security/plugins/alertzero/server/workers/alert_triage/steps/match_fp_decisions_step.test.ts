@@ -6,7 +6,7 @@
  */
 
 import type { StepHandlerContext } from '@kbn/workflows-extensions/server';
-import { TRIAGE_DECISIONS_AI_INDEX_DEST } from '../../../common/step_types/triage_decisions_index';
+import { TRIAGE_DECISIONS_AI_INDEX_DEST } from '../../../../common/step_types/triage_decisions_index';
 import {
   ALERT_FETCH_LIMIT,
   DECISION_MATCH_TOTAL_BUDGET_MS,
@@ -15,8 +15,8 @@ import {
   NOTE_CONCURRENCY,
   TAG_CHUNK_SIZE,
   type DecisionAutoCloseMode,
-} from '../../alert_triage/constants';
-import { decisionId, groupByStrictKey } from '../../alert_triage/fp_decisions';
+} from '../constants';
+import { decisionId, groupByStrictKey } from '../fp_decisions';
 import { getTriageMatchFpDecisionsStepDefinition } from './match_fp_decisions_step';
 
 const NOW = Date.parse('2026-10-27T12:00:00.000Z');

@@ -7,12 +7,12 @@
 
 import type { KibanaRequest } from '@kbn/core/server';
 import { createServerStepDefinition } from '@kbn/workflows-extensions/server';
-import { TRIAGE_DECISIONS_AI_INDEX_DEST } from '../../../common/step_types/triage_decisions_index';
+import { TRIAGE_DECISIONS_AI_INDEX_DEST } from '../../../../common/step_types/triage_decisions_index';
 import {
   triageStoreFpDecisionsStepCommonDefinition,
   type StoreFpDecisionsSkipReason,
-} from '../../../common/step_types/alert_triage';
-import type { DecisionAutoCloseMode } from '../../alert_triage/constants';
+} from '../../../../common/workers/alert_triage/step_types';
+import type { DecisionAutoCloseMode } from '../constants';
 import {
   FP_DECISION_BLOCKING_VERDICT_TAGS,
   FP_DECISION_MIN_ALERTS,
@@ -22,7 +22,7 @@ import {
   selectDecisionKeys,
   strictKeyTag,
   type FpDecisionKind,
-} from '../../alert_triage/fp_decisions';
+} from '../fp_decisions';
 import {
   findAlertIdsClosedAsOther,
   findKeyTagsWithVerdicts,

@@ -6,22 +6,22 @@
  */
 
 import { SYSTEM_SECURITY_WORKER_FLOOR_ALERT_TRIAGE_ID } from '@kbn/alertzero-common';
-import type { WorkerFeatureFlag, WorkerServerDefinition } from '../workers/types';
+import type { WorkerFeatureFlag, WorkerServerDefinition } from '../types';
 import {
   getTriageHeadroomStepDefinition,
   getTriageLoadAlertsStepDefinition,
   getTriagePlanSweepStepDefinition,
   getTriageRetagProposalAlertsStepDefinition,
   getTriageTagPatternKeysStepDefinition,
-} from '../step_types/alert_triage/alert_triage_steps';
+} from './steps/alert_triage_steps';
 import {
   getTriageGroupFpCandidatesStepDefinition,
   getTriageJoinProposalStepDefinition,
   type GroupProposalsStepDependencies,
-} from '../step_types/alert_triage/group_proposals_step';
-import { getTriageMatchFpDecisionsStepDefinition } from '../step_types/alert_triage/match_fp_decisions_step';
-import { getTriageRevokeFpDecisionStepDefinition } from '../step_types/alert_triage/revoke_fp_decision_step';
-import { getTriageStoreFpDecisionsStepDefinition } from '../step_types/alert_triage/store_fp_decisions_step';
+} from './steps/group_proposals_step';
+import { getTriageMatchFpDecisionsStepDefinition } from './steps/match_fp_decisions_step';
+import { getTriageRevokeFpDecisionStepDefinition } from './steps/revoke_fp_decision_step';
+import { getTriageStoreFpDecisionsStepDefinition } from './steps/store_fp_decisions_step';
 import { toDecisionAutoCloseMode } from './constants';
 
 /** Turns Alert Triage grouping off: every batch then mints its own proposal. */

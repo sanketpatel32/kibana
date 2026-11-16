@@ -6,19 +6,19 @@
  */
 
 import { createServerStepDefinition } from '@kbn/workflows-extensions/server';
-import { TRIAGE_DECISIONS_AI_INDEX_DEST } from '../../../common/step_types/triage_decisions_index';
+import { TRIAGE_DECISIONS_AI_INDEX_DEST } from '../../../../common/step_types/triage_decisions_index';
 import {
   triageRevokeFpDecisionStepCommonDefinition,
   type RevokeFpDecisionStatus,
-} from '../../../common/step_types/alert_triage';
+} from '../../../../common/workers/alert_triage/step_types';
 import {
   MAX_REVOKE_PAGES,
   TRIAGE_CLOSED_BY_DECISION_TAG_PREFIX,
   TRIAGE_SKIPPED_BY_DECISION_TAG_PREFIX,
   VERDICT_INCONCLUSIVE_TAG,
-} from '../../alert_triage/constants';
-import { FP_DECISION_ID_PREFIX } from '../../alert_triage/fp_decisions';
-import { tagInChunks } from '../../alert_triage/plan_sweep';
+} from '../constants';
+import { FP_DECISION_ID_PREFIX } from '../fp_decisions';
+import { tagInChunks } from '../plan_sweep';
 import {
   findAlertIdsByTag,
   reopenFalsePositiveClosedAlerts,
